@@ -25,6 +25,4 @@ public class CryptographyController {
         return new ResponseEntity<>(cryptographyService.encryptOrDecrypt(type, value), HttpStatus.OK);
     }
 
-
-
 }
