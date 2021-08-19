@@ -7,41 +7,40 @@ The purpose of the application is to facilitate the demonstration of knowledge i
 </p>
 
 
-# Sumário
-* [Requisitos de Instalação](#Requisitos-de-Instalação)
-* [Testes](#Testes)
+# Summary
+* [Installation_Requirements](#Installation-Requirements)
+* [Tests](#Tests)
 * [Sonarqube](#Sonarqube)
 
-# Requisitos de Instalação
+# Installation Requirements
 <ul>
 <li>JAVA 15</li>
 <li>Plugin Lombok</li>
 <li>Maven</li>
 <li>Docker</li>
-<li>Imagem docker do Sonarqube</li>
+<li>Sonarqube docker image</li>
 </ul>
 
 
 # Run
 
 <ul>
-    <li>Rodar o Projeto</li>
-    <li>Entrar no repositório via terminal e executar o comando: mvn spring-boot:run</li>
-    <li>url de acesso do swagger: localhost:8081/swagger.html</li>
-
+    <li>Run the Project</li>
+    <li>Access the project directory via terminal and execute the command: mvn spring-boot:run</li>
+    <li>URL to access swagger: localhost:8081/swagger.html</li>
 </ul>
 
-# Testes
+# Tests
 
 <ul>
     <li>mvn clean verify</li>
-    <li>url de acesso do jacoco reports: http://localhost:63342/challenge-api/target/site/jacoco/index.html</li>
+    <li>URL to access jacoco reports: http://localhost:63342/challenge-api/target/site/jacoco/index.html</li>
 </ul>
 
 # Sonarqube
 
 <ul>  
-    <li>Subir o container sonarqube pelo comando: sudo docker start sonarqube</li>
-    <li>rodar o comando: mvn sonar:sonar</li>
-    <li>link local sonarqube: localhost:9000</li>
+    <li>Raise the sonarqube container by command: sudo docker start sonarqube</li>
+    <li>Execute command: mvn sonar:sonar</li>
+    <li>Sonarqube local link: localhost:9000</li>
 </ul>
