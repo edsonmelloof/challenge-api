@@ -1,0 +1,151 @@
+---
+openapi: 3.0.3
+info:
+  title: Sys Manager - challenge-api
+  description: Challenge
+  contact:
+    name: Challenge-Api
+  version: version 1.0.0
+consumes:
+  - application/json
+tags:
+  - name: Cryptography
+    description: Cryptography related
+  - name: Fibonacci
+    description: Fibonacci sequence related
+  - name: Prime Number
+    description: Prime Number related
+  - name: Health
+    description: Get server health
+paths:
+  "/v1/prime-number":
+    get:
+      tags:
+        - Prime Number
+      summary: all query data related to prime numbers
+      description: Function that takes two integers as input and calculates the largest
+        prime number between them.
+      produces:
+        - application/json
+      parameters:
+        - name: number1
+          in: query
+          required: true
+          type: integer
+        - name: number2
+          in: query
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Data returned correctly.
+          content:
+            application/json:
+              schema:
+                "$ref": ''
+              examples:
+                response-with-prime-number:
+                  value:
+                    resultInfo: The largest prime number between 0 e 50, is 47
+                response-without-prime-number:
+                  value:
+                    userSecurityPhoneEntity:
+                      resultInfo: There are no prime numbers between 0 and 1
+        '404':
+          description: There are no prime numbers
+        '500':
+          description: Internal Server Error
+  "/v1/fibonacci/{size}":
+    get:
+      tags:
+        - Fibonacci
+      summary: all query data related to Fibonacci sequence
+      description: Function that returns the Fibonacci sequence from zero to the specified
+        length
+      produces:
+        - application/json
+      parameters:
+        - name: size
+          in: path
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Data returned correctly.
+          content:
+            application/json:
+              schema:
+                "$ref": ''
+              examples:
+                response:
+                  value:
+                    - 0
+                    - 1
+                    - 1
+                    - 2
+                    - 3
+                    - 5
+                    - 8
+                    - 13
+                    - 21
+                    - 34
+        '500':
+          description: Internal Server Error
+  "/v1/cryptography":
+    get:
+      tags:
+        - Cryptography
+      summary: Tag related to encryption part
+      description: Function to encrypt and decrypt data
+      produces:
+        - application/json
+      parameters:
+        - name: value
+          in: query
+          description: Only letters
+          required: true
+          type: string
+        - name: type
+          in: query
+          description: If decrypting, change the value below
+          required: true
+          style: form
+          schema:
+            type: string
+            enum:
+              - ENCRYPT
+              - DECRYPT
+      responses:
+        '200':
+          description: Data returned correctly.
+          content:
+            application/json:
+              schema:
+                "$ref": ''
+              examples:
+                response-encrypted:
+                  value:
+                    resultInfo: D#aðfdud#gr#fdiì#ì#dcxo
+                response-decrypted:
+                  value:
+                    userSecurityPhoneEntity:
+                      resultInfo: A xícara do café é azul
+        '500':
+          description: Internal Server Error
+  "/health":
+    get:
+      tags:
+        - Health
+      summary: API Endpoint for get server health
+      operationId: getHealthUsingGET
+      responses:
+        '200':
+          description: API is ok
+          content:
+            application/json:
+              schema:
+                "$ref": ''
+        '403':
+          description: Token invalid!
+        '500':
+          description: Internal server error
