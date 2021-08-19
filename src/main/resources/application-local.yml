@@ -1,0 +1,30 @@
+application:
+  retry:
+    maxAttempts: ${RETRY_MAX_ATTEMPTS:3}
+    backOffDelay: ${RETRY_BACK_OFF_DELAY:500}
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+
+logging:
+  level:
+    com:
+      zaxxer:
+        hikari:
+          HikariConfig: DEBUG
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+        SQL: DEBUG
+server:
+  port: 8081
