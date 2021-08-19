@@ -3,7 +3,7 @@
 <img src="https://www.cqcs.com.br/wp-content/uploads/2019/06/Challenge.arrow_-1024x584.jpg" />
 
 <p align="center">
-The application purpose is to make easy to consume API from services related to PagSeguro by the Xangai team, that is, the data consumption use has one exclusive purpose: troubleshooting PROD problems. </br>
+The purpose of the application is to facilitate the demonstration of knowledge in a Java Rest application. </br>
 </p>
 
 
