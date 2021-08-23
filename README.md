@@ -14,7 +14,7 @@ The purpose of the application is to facilitate the demonstration of knowledge i
 
 # Installation Requirements
 <ul>
-<li>JAVA 15</li>
+<li>JAVA 11</li>
 <li>Plugin Lombok</li>
 <li>Maven</li>
 <li>Docker</li>
